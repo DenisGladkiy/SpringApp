@@ -7,6 +7,19 @@
     <groupId>SpringApp</groupId>
     <artifactId>SpringApp</artifactId>
     <version>1.0-SNAPSHOT</version>
-
-
+    <properties>
+        <spring.ver>4.1.6.RELEASE</spring.ver>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring.ver}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+            <version>${spring.ver}</version>
+        </dependency>
+    </dependencies>
 </project>
