@@ -5,6 +5,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.util.Map;
+
 /**
  * Created by Denis on 19.06.2018.
  */
@@ -12,7 +14,7 @@ public class App {
     private Client client;
     private loggers.EventLogger EventLogger;
 
-    public App(Client client, EventLogger EventLogger) {
+    public App(Client client, Map<EventType,EventLogger> EventLoggers) {
         this.client = client;
         this.EventLogger = EventLogger;
     }
