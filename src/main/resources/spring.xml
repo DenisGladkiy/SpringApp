@@ -12,6 +12,7 @@
 
     <bean id="app" class="App">
         <constructor-arg ref="client"/>
+        <constructor-arg ref="cacheFileEventLogger"/>
         <constructor-arg>
             <map>
                 <entry key="INFO" value-ref="consoleEventLogger"/>

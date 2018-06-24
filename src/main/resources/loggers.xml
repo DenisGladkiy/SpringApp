@@ -14,7 +14,7 @@
     <bean id="cacheFileEventLogger" class="loggers.CacheFileEventLogger"
           destroy-method="destroy"
           parent="fileEventLogger">
-        <constructor-arg value="10"/>
+        <constructor-arg value="3"/>
     </bean>
 
     <bean id="combinedEventLogger" class="loggers.CombinedEventLogger">
