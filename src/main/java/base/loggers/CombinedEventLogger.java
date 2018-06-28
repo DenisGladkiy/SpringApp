@@ -1,6 +1,6 @@
-package loggers;
+package base.loggers;
 
-import entity.Event;
+import base.entity.Event;
 
 import java.util.List;
 

@@ -1,8 +1,9 @@
-package loggers;
+package base.loggers;
 
-import entity.Event;
+import base.entity.Event;
 import org.apache.commons.io.FileUtils;
 
+import javax.annotation.PostConstruct;
 import java.io.File;
 import java.io.IOException;
 
@@ -17,8 +18,10 @@ public class FileEventLogger implements EventLogger {
         this.fileName = fileName;
     }
 
+    @PostConstruct
     protected void init() throws IOException {
         file = new File(fileName);
+        file.createNewFile();
         if(!file.canWrite()){
             throw new IOException("Can't write to file");
         }
@@ -28,7 +31,7 @@ public class FileEventLogger implements EventLogger {
     public void logEvent(Event event) {
         boolean append = true;
         try {
-            FileUtils.writeStringToFile(file, event.toString(), append);
+            FileUtils.writeStringToFile(file, event.toString() +"\n", append);
         } catch (IOException e) {
             e.printStackTrace();
         }

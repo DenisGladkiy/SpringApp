@@ -1,6 +1,6 @@
-package loggers;
+package base.loggers;
 
-import entity.Event;
+import base.entity.Event;
 
 /**
  * Created by Denis on 19.06.2018.
