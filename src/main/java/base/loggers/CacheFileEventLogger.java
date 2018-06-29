@@ -2,6 +2,7 @@ package base.loggers;
 
 import base.entity.Event;
 
+import javax.annotation.PreDestroy;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,12 +34,7 @@ public class CacheFileEventLogger extends FileEventLogger {
         }
     }
 
-
-//    @Override
-//    protected void init() throws IOException {
-//        super.init();
-//    }
-
+    @PreDestroy
     private void destroy(){
         if(!cache.isEmpty()){
             writeEventsFromCache();

@@ -63,7 +63,7 @@ public class App {
         this.defaultEventLogger = defaultEventLogger;
     }
 
-    @Autowired
+    //@Autowired
     @Resource(name = "loggerMap")
     public void setEventLoggers(Map<EventType, EventLogger> eventLoggers) {
         this.eventLoggers = eventLoggers;

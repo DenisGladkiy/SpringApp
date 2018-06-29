@@ -26,7 +26,7 @@
     </bean>-->
 
 
-    <util:map id="loggerMap" map-class="java.util.HashMap">
+    <util:map id="loggerMap" map-class="java.util.HashMap" key-type="base.EventType">
         <entry key="INFO" value-ref="consoleEventLogger"/>
         <entry key="ERROR" value-ref="combinedEventLogger"/>
     </util:map>
