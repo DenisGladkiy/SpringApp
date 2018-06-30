@@ -1,11 +1,14 @@
 package base;
 
+import base.config.AnnotationConfig;
 import base.entity.Client;
 import base.entity.Event;
 import base.loggers.EventLogger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;
 
@@ -31,14 +34,15 @@ public class App {
     }
 
     public static void main(String[] args) {
-        ConfigurableApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+        //ConfigurableApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+        ConfigurableApplicationContext context = new AnnotationConfigApplicationContext(AnnotationConfig.class);
         App app = (App)context.getBean("app");
-        Event event = (Event)context.getBean("event");
+        //Event event = (Event)context.getBean("event");
         for(int i = 0; i < 3; i++) {
-            app.logEvent(null, event);
+            app.logEvent(null, (Event)context.getBean("event"));
         }
-        app.logEvent(EventType.INFO, event);
-        app.logEvent(EventType.ERROR, event);
+        app.logEvent(EventType.INFO, (Event)context.getBean("event"));
+        app.logEvent(EventType.ERROR, (Event)context.getBean("event"));
         context.close();
     }
 

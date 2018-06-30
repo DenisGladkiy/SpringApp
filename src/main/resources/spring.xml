@@ -10,14 +10,14 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context-4.1.xsd">
 
-    <context:annotation-config/>
-    <context:component-scan base-package="base"/>
+    <!--<context:annotation-config/>
+   <context:component-scan base-package="base"/>
 
-    <bean id="client" class="base.entity.Client">
-        <constructor-arg value="${id}"/>
-        <constructor-arg value="${name}"/>
-        <property name="greeting" value="${greeting}"/>
-    </bean>
+  <bean id="client" class="base.entity.Client">
+       <constructor-arg value="${id}"/>
+       <constructor-arg value="${name}"/>
+       <property name="greeting" value="${greeting}"/>
+   </bean>-->
 
     <!--<bean id="app" class="App">
         <constructor-arg ref="client"/>
@@ -26,13 +26,12 @@
     </bean>-->
 
 
-    <util:map id="loggerMap" map-class="java.util.HashMap" key-type="base.EventType">
+    <!--<util:map id="loggerMap" map-class="java.util.HashMap" key-type="base.EventType">
         <entry key="INFO" value-ref="consoleEventLogger"/>
         <entry key="ERROR" value-ref="combinedEventLogger"/>
-    </util:map>
+    </util:map>-->
 
-
-    <bean id="event" class="base.entity.Event" scope="prototype">
+   <!-- <bean id="event" class="base.entity.Event" scope="prototype">
         <constructor-arg>
             <bean class="java.util.Date"/>
         </constructor-arg>
@@ -52,6 +51,6 @@
         <property name="ignoreResourceNotFound" value="true"/>
     </bean>
 
-    <import resource="loggers.xml"/>
+    <import resource="loggers.xml"/>-->
 
 </beans>
