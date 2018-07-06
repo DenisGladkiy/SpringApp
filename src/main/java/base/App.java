@@ -30,7 +30,7 @@ public class App {
     public App(Client client, EventLogger defaultEventLogger, Map<EventType,EventLogger> eventLoggers) {
         this.client = client;
         this.defaultEventLogger = defaultEventLogger;
-        this.eventLoggers = eventLoggers;
+         this.eventLoggers = eventLoggers;
     }
 
     public static void main(String[] args) {
